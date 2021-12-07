@@ -1,0 +1,303 @@
+/********************************************
+RESET DE MARGENES AUTOMATICOS DEL EXPLORADOR
+*********************************************/
+
+* {
+  box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+/********************************************
+            ESTILOS GENERALES
+*********************************************/
+
+html {
+  font-size: 62.5%;
+  font-family: 'Press Start 2P', cursive;
+  background-color:#91f291;
+}
+
+
+/********************************************
+         ESTILOS DEL MENU / NAV
+*********************************************/
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  background: rgb(238,251,4);
+  background: linear-gradient(0deg, rgba(238,251,4,1) 0%, rgba(255,195,0,1) 59%);
+
+}
+
+nav  ul  li {
+  float: left;
+}
+
+nav  ul  li a {
+  font-size: 1.4rem;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border-right: 1px solid #bbb;
+}
+
+nav ul li a:hover {
+  background-color: #91f291;
+}
+
+
+
+/********************************************
+            ESTILOS DEL BANNER
+*********************************************/
+
+.section_banner {
+  background-image:url(IMG/stardew-valley-banner.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#div-banner__title {
+  text-align: center;
+  font-size: 5rem;
+  color: #ffc300;
+  text-transform: uppercase;
+}
+
+
+/********************************************
+  ESTILOS DE TEXTO DE SUSCRIPCION DE CANAL
+*********************************************/
+
+.section__search_bar {
+  text-align: center;
+  background-color: #91f291;
+  margin-top: 3rem;
+}
+
+#button{
+    display: inline-block;
+    font-size: 1.6rem;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #ffc300;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 3px #999;
+}
+#button:hover {
+    background-color: #91f291;
+}
+
+#button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+
+/********************************************
+      ESTILOS DE NOTICIAS / ARTICULOS
+*********************************************/
+
+.noticias__titulo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 3rem;
+  background: rgb(238,251,4);
+  background: linear-gradient(0deg, rgba(238,251,4,1) 0%, rgba(255,195,0,1) 59%);
+  padding: 30px 30px;
+}
+
+.noticias__titulo h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 4rem;
+}
+
+.articulos__container {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 2rem;
+  padding: 10px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+
+.articulos {
+  width: 400px;
+  height: auto;
+  margin-top: 4rem;
+}
+
+.articulos h2 {
+  text-align: center;
+  word-wrap: break-word;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.articulos img {
+  width: 100%;
+  height: auto;
+  padding: 10px 10px;
+  border-radius: 15%;
+}
+
+.articulos p {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 1.4rem;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+
+/********************************************
+          ESTILOS DE LISTAS
+*********************************************/
+
+.lista-habitantes__titulo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 3rem;
+  background: rgb(238,251,4);
+  background: linear-gradient(0deg, rgba(238,251,4,1) 0%, rgba(255,195,0,1) 59%);
+  padding: 30px 30px;
+}
+
+.lista-habitantes__titulo h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 3rem;
+}
+
+.lista-habitantes {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.lista-habitantes ul {
+  font-size: 3rem;
+  list-style: none;
+  border: 10px solid #ffc300;
+  border-radius: 1.5rem;
+  margin-top: 2rem;
+}
+
+.habitantes {
+  margin-right: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 2rem;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+
+/********************************************
+          ESTILOS DE MAPA Y TABLA
+*********************************************/
+
+.mapa__titulo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 3rem;
+  background: rgb(238,251,4);
+  background: linear-gradient(0deg, rgba(238,251,4,1) 0%, rgba(255,195,0,1) 59%);
+  padding: 30px 30px;
+}
+
+.mapa__titulo h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 3rem;
+}
+
+.mapa__mapa {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.tabla__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 6rem;
+}
+
+
+th, td  {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 1.5rem;
+  width: 300px;
+  background: #ffc300;
+  border-radius: 1rem;
+}
+
+th:hover, td:hover {
+  background-color: #91f291;
+}
+
+
+/********************************************
+          ESTILOS DEL FOOTER
+*********************************************/
+
+footer {
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: center;
+  background-color: #3e8e41;
+  position: fixed;
+  bottom: 0;
+}
+
+footer div {
+  margin-top: 1rem;
+  margin-right: 20px;
+}
