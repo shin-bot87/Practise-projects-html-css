@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Clase 10</title>
+    <style>
+        :root {
+            --white: #FFFFFF;
+            --black: #000000;
+            --very-light-pink: #c7c7c7;
+            --text-input-field: #f7f7f7;
+            --hospital-green: #ACD9B2;
+            --sm: 14px;
+            --md: 16px;
+            --lg: 18px;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        .desktop-menu {
+            width: 100%;
+            height: auto;
+            border: 1px solid var(--very-light-pink);
+            border-radius: 6px;
+            padding: 20px 20px 0 20px;
+        }
+
+        .desktop-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .desktop-menu ul li {
+            text-align: end;
+        }
+
+        .desktop-menu ul li:nth-child(1),
+        .desktop-menu ul li:nth-child(2) {
+            font-weight: bold;
+        }
+
+        .desktop-menu ul li:last-child {
+            padding-top: 20px;
+            border-top: 1px solid var(--very-light-pink);
+        }
+
+        .desktop-menu ul li:last-child a {
+            color: var(--hospital-green);
+            font-size: var(--sm);
+        }
+
+        .desktop-menu ul li a {
+            color: var(--black);
+            font-size: var(--sm);
+            text-decoration: none;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        .mobile-menu {
+            padding: 24px;
+        }
+
+        .mobile-menu a {
+            text-decoration: none;
+            color: var(--black);
+            font-weight: bold;
+            
+
+        }
+
+        .mobile-menu ul {
+            padding: 0;
+            margin: 24px 0 0;
+            list-style: none;
+        }
+
+        .mobile-menu ul:nth-child(1) {
+            border-bottom: 1px solid var(--very-light-pink);
+        }
+
+        .mobile-menu ul li {
+            margin-bottom: 24px;
+        }
+
+        .email {
+            font-size: var(--sm);
+            font-weight: 300 !important;
+        }
+
+        .sign-out {
+            font-size: var(--sm);
+            color: var(--hospital-green) !important;
+        }
+
+        .my-order {
+            width: 100%;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+
+        .title {
+            font-size: var(--lg);
+            margin-bottom: 40px;
+        }
+
+        .my-order-container {
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            width: 300px;
+        }
+
+        .my-order-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .order {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 16px;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .order p:nth-child(1) {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .order p:nth-child(2) {
+            text-align: end;
+            font-weight: bold;
+        }
+
+        .order p span:nth-child(1) {
+            font-size: var(--md);
+            font-weight: bold;
+        }
+
+        .order p span:nth-child(2) {
+            font-size: var(--sm);
+            color: var(--very-light-pink);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="my-order">
+        <div class="my-order-container">
+            <h1 class="title">My Order</h1>
+            <div class="my-order-content">
+                <div class="order">
+                    <p>
+                        <span>03/24/21</span>
+                        <span>6 articles</span>
+                    </p>
+                    <p>560€</p>
+                    <img src="icons/flechita.svg" alt="arrow">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
