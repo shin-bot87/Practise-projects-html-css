@@ -1,0 +1,164 @@
+:root {
+    --deep-space-sparkle: #335c67; /*color menu fondo*/
+    --olivine: #a1c181; /*Efecto hover botones menu*/
+    --medium-champagne: #fff3b0; /*color body*/
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    padding: 90px 20px 0; /*Se le añade el padding al body para dejar un espacion entre el menu y el cuerpo de la pagina*/
+    background-color: var(--medium-champagne);
+}
+
+.header {
+    background-color: var(--deep-space-sparkle);
+    height: 80px;
+    position: fixed; /*Se utiliza para dejar fijo un elemento, por ejemplo el menu en este caso siempre sera visible*/
+    width: 100%;
+    /*Con top 0 y left 0 conseguimos fijar el menu arriba a la izquierda con la ayuda de position:fixed*/
+    top: 0; 
+    left: 0;
+}
+
+.nav {
+    /*Display flex es lo que permite que los elementos se puedan posicionar con ayuda de justify-content: space between en este caso*/
+    display: flex;
+    justify-content: space-between; /*Tenemos dos eleementos dentro del nav. Un link y una lista. Esto provoca que haya espacio entre ellos*/
+    max-width: 992px; /*Se utiliza para el responsive. En este caso para que el menu no se vea excesivamente lejos en pantallas grandes*/
+    margin: 0 auto;/*Con ayuda del margin 0 auto, se consigue mantener centrado todo el menu siempre*/
+}
+.logo,
+.nav-menu-link {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 3px;
+}
+
+.nav-menu-link:hover,
+.nav-menu-link_active {
+    background-color: var(--olivine);
+    transition: .5s; /*El efecto hover tomara medio segundo para terminar su efecto*/
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 0 40px;
+    line-height: 75px; /*Define el alto de linea. El espacio entre un area de texto y su contenido */
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    margin-right: 40px;
+}
+
+.nav-menu-item {
+    font-size: 18px;
+    margin: 0 10px;
+    line-height: 80px;
+    text-transform: uppercase; /*Es una buena practica NO ESCRIBIR las mayusculas en el HTML. Lo correcto es definirlas en el estilo*/
+    width: max-content;/*Se utiliza para que al redimensionar una ventana, no se achique o invada el contenido por la ventana*/
+}
+
+.nav-toggle {
+    color: white;
+    background: none; /*Se añade esto al icono para que se elimine el fondo y se quede difuminado con el resto de elementos*/
+    border: none; /*Se añade esto para quitar los bordes del icono y dejar solo la "transparencia"*/
+    font-size: 30px;
+    padding: 0 20px;
+    line-height: 60px;
+
+    display: none; /*Se utiliza cuando queremos que un elemento sea invisible*/
+}
+
+
+/*ESTILOS DEL RESPONSIVE PARA CUANDO LA RESOLUCION DE LA WEB SEA MENOS A 768px*/
+@media (max-width: 768px) { 
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    html {
+        font-size: 62.5%;
+    }
+    
+    body {
+        padding-top: 70px; 
+    }
+    
+    .header {
+        background-color: var(--deep-space-sparkle);
+        height: 60px;
+        position: fixed; 
+        width: 100%; 
+        top: 0; 
+        left: 0;
+    }
+    
+    .logo {
+        font-size: 25px;
+        font-weight: bold;
+        padding: 0 20px;
+        line-height: 55px; 
+    }
+    /*ESTILOS PARA EL MENU*/
+    .nav-menu {
+        flex-direction: column; /*Con esto indicamos que queremos la direccion del menu en columna o verticalmente*/
+        align-items: center;
+        margin: 0;
+        padding: 20px 0; /*En las listas el navegador te agrega automaticamente un padding, se resetea a 0 para dejarlo pegado*/
+        list-style: none;
+        background-color: var(--deep-space-sparkle);
+        position: fixed;
+        left: 0;
+        top: 60px;
+        width: 100%;
+        height: calc(100% - 60px);
+        /*Para que al redimensionar la pantalla en dispositivos mobiles no se "coma" parate del contenido
+        tenemos que indicarle mediante calculo que ocupe el 100% del alto menos los 60px que ocupa el grosor de la barra de menu*/
+        overflow-y: auto;
+        /*Indicamos overflow-y (y - para el eje vertical) para que cuando la pantalla o el zoom sean demasiado pequeños, 
+        automaticamente aparezca una barra para hacer scroll, asi nunca perderemos nuestro menu*/
+        left: 100%; /*Se agrega esto para esconder el menu totalmente en el lateral izquierdo*/
+        transition: left 0.3s;/*Se le añade la transicion para que se vea el efecto de esconderse el menu*/
+    }
+    
+    .nav-menu-item {
+        line-height: 70px;
+    }
+
+    .nav-menu-link:hover,
+    .nav-menu-link_active {
+        background:none;
+        color: var(--olivine);
+    }
+
+    .nav-toggle {
+        cursor: pointer;
+        display: block;
+        /*Desde las media queries, se utiliza display block para mostrar contenido que a lo mejor en otro modo estaba
+        oculto, en este caso la intencion es la de mostrar el boton de menu para hacerlo desplegable*/
+    }
+
+    .nav-menu_visible {
+        left: 0;/*Se le añade 0 para fijar el menu totalmente a la izquierda*/
+    }
+
+    /*Esto es para la accesibilidad, que hace que cuando se pase el mouse por encima, el elemento se enfoque o no*/
+    .nav-toggle:focus:not(:focus-visible) {
+        outline: none;
+    }
+}
